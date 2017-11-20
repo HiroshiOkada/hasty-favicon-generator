@@ -1,0 +1,22 @@
+.App {
+  width: 98vw;
+  margin: auto;
+
+  display: grid;
+}
+
+@media screen and (orientation: portrait) {
+  .App {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 85vh;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .App {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    height: 80vh;
+  }
+}

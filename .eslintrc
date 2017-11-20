@@ -1,0 +1,22 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "rules": {
+    "semi": "off",
+    "no-console": "off",
+    "react/jsx-filename-extension": "off",
+    "react/prefer-stateless-function": "off",
+  },
+  "globals": {
+    "jest": false,
+    "describe": false,
+    "it": false,
+    "expect": false,
+    "localStorage": false,
+    "fetch",
+    "document",
+    "window",
+    "navigator",
+    "URL",
+  }
+}

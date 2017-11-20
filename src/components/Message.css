@@ -1,0 +1,15 @@
+.Message {
+  text-align: center;
+}
+
+@media screen and (orientation: portrait) {
+  .Message {
+    font-size: 3vh;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .Message {
+    font-size: 2vh;
+  }
+}
