@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import './App.css'
-import Message from './Message'
+import Caption from './Caption'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Message />
+        <Caption />
       </div>
     )
   }

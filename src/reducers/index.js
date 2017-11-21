@@ -1,13 +1,19 @@
-import { CHANGE_MESSAGE } from '../actions/'
+import { CHANGE_CAPTION, ADD_UPDATE_IMAGE_URL } from '../actions/'
 
 const initialState = {
-  message: 'Hello, World',
+  caption: 'A',
+  imageUrls: {},
 }
 
 const theApp = (state = initialState, action) => {
   switch (action.type) {
-    case CHANGE_MESSAGE:
-      return { ...state, message: action.message }
+    case CHANGE_CAPTION:
+      return { ...state, caption: action.caption }
+    case ADD_UPDATE_IMAGE_URL:
+      return {
+        ...state,
+        imageUrls: { ...state.imageUrls, [action.size]: action.url },
+      }
     default:
       return state
   }
