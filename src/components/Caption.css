@@ -1,15 +1,15 @@
-.Message {
+.Caption {
   text-align: center;
 }
 
 @media screen and (orientation: portrait) {
-  .Message {
+  .Caption {
     font-size: 3vh;
   }
 }
 
 @media screen and (orientation: landscape) {
-  .Message {
+  .Caption {
     font-size: 2vh;
   }
 }
