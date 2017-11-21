@@ -14,10 +14,7 @@ class Caption extends Component {
     const { caption } = this.props
     return (
       <div className="Caption">
-        <p>{caption}</p>
-        <p>
-          <input onChange={e => this.handleChange(e)} />
-        </p>
+        <input onChange={e => this.handleChange(e)} value={caption} />
       </div>
     )
   }

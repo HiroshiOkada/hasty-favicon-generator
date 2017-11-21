@@ -1,0 +1,16 @@
+.Canvas {
+  border: 1px solid #333;
+  background: #fcc;
+  width: min-content;
+  height: min-content;
+}
+
+@media screen and (orientation: portrait) {
+  .Canvas {
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .Canvas {
+  }
+}
