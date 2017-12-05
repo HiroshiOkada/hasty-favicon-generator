@@ -14,8 +14,7 @@ class Canvas extends Component {
   }
 
   drawCaption() {
-    const { size, caption } = this.props
-
+    const { size, caption, textColor, fillColor } = this.props
     const ctx = this.canvas.getContext('2d')
 
     // Todo: remove it when canvas test complete
@@ -24,10 +23,13 @@ class Canvas extends Component {
     }
 
     ctx.clearRect(0, 0, size, size)
+    ctx.fillStyle = fillColor
+    ctx.fillRect(0, 0, size, size)
     ctx.font = `${size}px sans-serif`
     ctx.textAlign = 'center'
     ctx.textBaseline = 'middle'
-    ctx.fillText(caption, size / 2, size / 2)
+    ctx.fillStyle = textColor
+    ctx.fillText(caption, size / 2, size / 2, size)
   }
 
   render() {
@@ -46,7 +48,11 @@ class Canvas extends Component {
   }
 }
 
-const mapStateToProps = state => ({ caption: state.caption })
+const mapStateToProps = state => ({
+  caption: state.caption,
+  textColor: state.textColor,
+  fillColor: state.fillColor,
+})
 const mapDispatchToProps = dispatch => ({
   putImageUrl(size, url) {
     dispatch(addUpdateImageUrl(size, url))
@@ -57,6 +63,8 @@ Canvas.propTypes = {
   caption: PropTypes.string.isRequired,
   size: PropTypes.number.isRequired,
   id: PropTypes.string.isRequired,
+  textColor: PropTypes.string.isRequired,
+  fillColor: PropTypes.string.isRequired,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Canvas)

@@ -1,5 +1,10 @@
 import theApp from './index'
-import { changeCaption, addUpdateImageUrl } from '../actions'
+import {
+  changeCaption,
+  addUpdateImageUrl,
+  changeTextColor,
+  changeFillColor,
+} from '../actions'
 
 describe('changeCaption', () => {
   it('should change caption', () => {
@@ -51,6 +56,26 @@ describe('addUpdateImageUrl', () => {
         16: 'data:image/png;base64,xxx16',
         32: 'data:image/png;base64,def32',
       },
+    })
+  })
+})
+
+describe('changeTextColor', () => {
+  it('should change textColor', () => {
+    expect(
+      theApp({ textColor: '#112233' }, changeTextColor('#445566')),
+    ).toEqual({
+      textColor: '#445566',
+    })
+  })
+})
+
+describe('changeFillColor', () => {
+  it('should change fillColor', () => {
+    expect(
+      theApp({ fillColor: '#112233' }, changeFillColor('#445566')),
+    ).toEqual({
+      fillColor: '#445566',
     })
   })
 })

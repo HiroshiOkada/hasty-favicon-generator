@@ -8,7 +8,8 @@
     "react/prefer-stateless-function": "off",
     "function-paren-newline": "off",
     "no-mixed-operators": "off",
-    "arrow-parens": "off"
+    "arrow-parens": "off",
+    "object-curly-newline": "off"
   },
   "globals": {
     "jest": false,
