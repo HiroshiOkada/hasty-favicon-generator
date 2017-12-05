@@ -31,9 +31,9 @@ class Canvas extends Component {
   }
 
   render() {
-    const { size } = this.props
+    const { size, id } = this.props
     return (
-      <div className="Canvas">
+      <div className="Canvas" id={id}>
         <canvas
           width={size}
           height={size}
@@ -56,6 +56,7 @@ const mapDispatchToProps = dispatch => ({
 Canvas.propTypes = {
   caption: PropTypes.string.isRequired,
   size: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Canvas)
