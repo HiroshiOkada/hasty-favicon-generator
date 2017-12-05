@@ -7,6 +7,8 @@
     "react/jsx-filename-extension": "off",
     "react/prefer-stateless-function": "off",
     "function-paren-newline": "off",
+    "no-mixed-operators": "off",
+    "arrow-parens": "off"
   },
   "globals": {
     "jest": false,
@@ -14,10 +16,10 @@
     "it": false,
     "expect": false,
     "localStorage": false,
-    "fetch",
-    "document",
-    "window",
-    "navigator",
-    "URL",
+    "fetch": false,
+    "document": false,
+    "window": false,
+    "navigator": false,
+    "URL": false
   }
 }
