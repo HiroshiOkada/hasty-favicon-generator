@@ -1,6 +1,6 @@
 import {
   CHANGE_CAPTION,
-  ADD_UPDATE_IMAGE_URL,
+  ADD_UPDATE_IMAGE,
   CHANGE_TEXT_COLOR,
   CHANGE_FILL_COLOR,
 } from '../actions/'
@@ -8,23 +8,23 @@ import {
 export const CAPTION = 'caption'
 export const TEXT_COLOR = 'textColor'
 export const FILL_COLOR = 'fillColor'
-export const IMAGE_URLS = 'imageUrls'
+export const IMAGES = 'images'
 
 const initialState = {
   [CAPTION]: 'A',
   [TEXT_COLOR]: '#ff0000',
   [FILL_COLOR]: '#00ff00',
-  [IMAGE_URLS]: {},
+  [IMAGES]: {},
 }
 
 const theApp = (state = initialState, action) => {
   switch (action.type) {
     case CHANGE_CAPTION:
       return { ...state, [CAPTION]: action[CAPTION] }
-    case ADD_UPDATE_IMAGE_URL:
+    case ADD_UPDATE_IMAGE:
       return {
         ...state,
-        imageUrls: { ...state.imageUrls, [action.size]: action.url },
+        [IMAGES]: { ...state[IMAGES], [action.size]: action.data },
       }
     case CHANGE_TEXT_COLOR:
       return {

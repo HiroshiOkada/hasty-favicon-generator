@@ -1,10 +1,10 @@
 import {
   changeCaption,
-  addUpdateImageUrl,
+  addUpdateImage,
   changeTextColor,
   changeFillColor,
 } from '../actions'
-import theApp, { CAPTION, TEXT_COLOR, FILL_COLOR, IMAGE_URLS } from './index'
+import theApp, { CAPTION, TEXT_COLOR, FILL_COLOR, IMAGES } from './index'
 
 describe('changeCaption', () => {
   it('should change caption', () => {
@@ -14,47 +14,42 @@ describe('changeCaption', () => {
   })
 })
 
-describe('addUpdateImageUrl', () => {
-  it('should change add image url', () => {
-    expect(
-      theApp(
-        { [IMAGE_URLS]: {} },
-        addUpdateImageUrl(16, 'data:image/png;base64,abc16'),
-      ),
-    ).toEqual({
-      [IMAGE_URLS]: {
-        16: 'data:image/png;base64,abc16',
+describe('addUpdateImage', () => {
+  it('should change or add image', () => {
+    expect(theApp({ [IMAGES]: {} }, addUpdateImage(16, '161'))).toEqual({
+      [IMAGES]: {
+        16: '161',
       },
     })
     expect(
       theApp(
         {
-          [IMAGE_URLS]: {
-            16: 'data:image/png;base64,abc16',
+          [IMAGES]: {
+            16: '161',
           },
         },
-        addUpdateImageUrl(32, 'data:image/png;base64,def32'),
+        addUpdateImage(32, '321'),
       ),
     ).toEqual({
-      [IMAGE_URLS]: {
-        16: 'data:image/png;base64,abc16',
-        32: 'data:image/png;base64,def32',
+      [IMAGES]: {
+        16: '161',
+        32: '321',
       },
     })
     expect(
       theApp(
         {
-          [IMAGE_URLS]: {
-            16: 'data:image/png;base64,xxx16',
-            32: 'data:image/png;base64,def32',
+          [IMAGES]: {
+            16: '161',
+            32: '321',
           },
         },
-        addUpdateImageUrl(16, 'data:image/png;base64,xxx16'),
+        addUpdateImage(16, '162'),
       ),
     ).toEqual({
-      [IMAGE_URLS]: {
-        16: 'data:image/png;base64,xxx16',
-        32: 'data:image/png;base64,def32',
+      [IMAGES]: {
+        16: '162',
+        32: '321',
       },
     })
   })

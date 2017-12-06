@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import './Canvas.css'
-import { addUpdateImageUrl } from '../actions'
+import { addUpdateImage } from '../actions'
+import { dataURIToArrayBuffer } from '../utils'
 
 class Canvas extends Component {
   componentDidMount() {
@@ -14,7 +15,7 @@ class Canvas extends Component {
   }
 
   drawCaption() {
-    const { size, caption, textColor, fillColor } = this.props
+    const { size, caption, textColor, fillColor, putImage } = this.props
     const ctx = this.canvas.getContext('2d')
 
     // Todo: remove it when canvas test complete
@@ -30,6 +31,10 @@ class Canvas extends Component {
     ctx.textBaseline = 'middle'
     ctx.fillStyle = textColor
     ctx.fillText(caption, size / 2, size / 2, size)
+
+    const data = dataURIToArrayBuffer(this.canvas.toDataURL())
+    console.log(data.byteLength)
+    putImage(size, data)
   }
 
   render() {
@@ -54,8 +59,8 @@ const mapStateToProps = state => ({
   fillColor: state.fillColor,
 })
 const mapDispatchToProps = dispatch => ({
-  putImageUrl(size, url) {
-    dispatch(addUpdateImageUrl(size, url))
+  putImage(size, data) {
+    dispatch(addUpdateImage(size, data))
   },
 })
 
@@ -65,6 +70,7 @@ Canvas.propTypes = {
   id: PropTypes.string.isRequired,
   textColor: PropTypes.string.isRequired,
   fillColor: PropTypes.string.isRequired,
+  putImage: PropTypes.func.isRequired,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Canvas)
