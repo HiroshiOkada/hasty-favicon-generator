@@ -8,15 +8,15 @@
 @media screen and (orientation: portrait) {
   .App {
     width: 200px;
-    grid-template-columns: 100px 100px;
-    grid-template-rows: 100px 100px 100px 100px 100px;
+    grid-template-columns: 120px 120px;
+    grid-template-rows: 100px 100px 90px 90px 50px 320px 320px;
   }
 }
 
 @media screen and (orientation: landscape) {
   .App {
     width: 400px;
-    grid-template-columns: 100px 100px 100px 100px;
-    grid-template-rows: 100px 100px 100px;
+    grid-template-columns: 120px 120px 120px 120px;
+    grid-template-rows: 100px 100px 50px 320px;
   }
 }

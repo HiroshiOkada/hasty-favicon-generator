@@ -12,7 +12,6 @@
 
 @media screen and (orientation: landscape) {
   .Caption {
-    font-size: 2vh;
     grid-row: 3;
     grid-column: 1/5;
   }
