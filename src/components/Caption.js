@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import './Caption.css'
 import { changeCaption } from '../actions'
+import { CAPTION } from '../reducers'
 
 class Caption extends Component {
   handleChange(event) {
@@ -20,7 +21,7 @@ class Caption extends Component {
   }
 }
 
-const mapStateToProps = state => ({ caption: state.caption })
+const mapStateToProps = state => ({ caption: state[CAPTION] })
 const mapDispatchToProps = dispatch => ({
   change: caption => dispatch(changeCaption(caption)),
 })

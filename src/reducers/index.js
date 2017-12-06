@@ -5,17 +5,22 @@ import {
   CHANGE_FILL_COLOR,
 } from '../actions/'
 
+export const CAPTION = 'caption'
+export const TEXT_COLOR = 'textColor'
+export const FILL_COLOR = 'fillColor'
+export const IMAGE_URLS = 'imageUrls'
+
 const initialState = {
-  caption: 'A',
-  textColor: '#ff0000',
-  fillColor: '#00ff00',
-  imageUrls: {},
+  [CAPTION]: 'A',
+  [TEXT_COLOR]: '#ff0000',
+  [FILL_COLOR]: '#00ff00',
+  [IMAGE_URLS]: {},
 }
 
 const theApp = (state = initialState, action) => {
   switch (action.type) {
     case CHANGE_CAPTION:
-      return { ...state, caption: action.caption }
+      return { ...state, [CAPTION]: action[CAPTION] }
     case ADD_UPDATE_IMAGE_URL:
       return {
         ...state,
