@@ -4,6 +4,7 @@ import Caption from './Caption'
 import Canvas from './Canvas'
 import ColorSelector from './ColorSelector'
 import { TEXT_COLOR, FILL_COLOR } from '../reducers'
+import Download from './Download'
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
         <Caption />
         <ColorSelector target={TEXT_COLOR} />
         <ColorSelector target={FILL_COLOR} />
+        <Download />
       </div>
     )
   }

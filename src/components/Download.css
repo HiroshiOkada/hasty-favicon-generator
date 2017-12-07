@@ -1,0 +1,17 @@
+.Download {
+  text-align: center;
+}
+
+@media screen and (orientation: portrait) {
+  .Download {
+    grid-row: 8;
+    grid-column: 1/3;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .Download {
+    grid-row: 5;
+    grid-column: 1/5;
+  }
+}

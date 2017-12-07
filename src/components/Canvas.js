@@ -33,7 +33,6 @@ class Canvas extends Component {
     ctx.fillText(caption, size / 2, size / 2, size)
 
     const data = dataURIToArrayBuffer(this.canvas.toDataURL())
-    console.log(data.byteLength)
     putImage(size, data)
   }
 

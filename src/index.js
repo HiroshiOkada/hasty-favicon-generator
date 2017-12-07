@@ -11,6 +11,11 @@ import registerServiceWorker from './registerServiceWorker'
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(reducer, composeEnhancers())
 
+// Promise.all([
+//   store.dispatch(getCategoriesPromise()),
+//   store.dispatch(getAllPostsPromise())
+// ]).then(() => store.dispatch(setLoaded()));
+
 render(
   <Provider store={store}>
     <App />

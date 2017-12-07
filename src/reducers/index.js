@@ -17,7 +17,7 @@ const initialState = {
   [CAPTION]: 'A',
   [TEXT_COLOR]: '#ff0000',
   [FILL_COLOR]: '#00ff00',
-  [IMAGES]: {},
+  [IMAGES]: { 16: null, 24: null, 32: null, 64: null },
   [DOWNLOAD_DATA]: null,
 }
 
@@ -28,7 +28,7 @@ const theApp = (state = initialState, action) => {
     case CLEAR_IMAGES:
       return {
         ...state,
-        [IMAGES]: {},
+        [IMAGES]: { 16: null, 24: null, 32: null, 64: null },
       }
     case ADD_UPDATE_IMAGE:
       return {
