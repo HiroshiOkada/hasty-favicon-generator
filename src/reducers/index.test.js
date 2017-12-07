@@ -1,15 +1,33 @@
 import {
   changeCaption,
+  clearImages,
   addUpdateImage,
   changeTextColor,
   changeFillColor,
+  setDownloadData,
 } from '../actions'
-import theApp, { CAPTION, TEXT_COLOR, FILL_COLOR, IMAGES } from './index'
+import theApp, {
+  CAPTION,
+  TEXT_COLOR,
+  FILL_COLOR,
+  IMAGES,
+  DOWNLOAD_DATA,
+} from './index'
 
 describe('changeCaption', () => {
   it('should change caption', () => {
     expect(theApp({ [CAPTION]: 'old msg' }, changeCaption('new msg'))).toEqual({
       [CAPTION]: 'new msg',
+    })
+  })
+})
+
+describe('clearImages', () => {
+  it('should clear image', () => {
+    expect(
+      theApp({ [IMAGES]: { 16: '111', 32: '222' } }, clearImages()),
+    ).toEqual({
+      [IMAGES]: {},
     })
   })
 })
@@ -71,6 +89,16 @@ describe('changeFillColor', () => {
       theApp({ [FILL_COLOR]: '#112233' }, changeFillColor('#445566')),
     ).toEqual({
       [FILL_COLOR]: '#445566',
+    })
+  })
+})
+
+describe('setDownloadData', () => {
+  it('should set download data', () => {
+    expect(
+      theApp({ [DOWNLOAD_DATA]: 'aabbcc' }, setDownloadData('ddeeff')),
+    ).toEqual({
+      [DOWNLOAD_DATA]: 'ddeeff',
     })
   })
 })
