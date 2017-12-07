@@ -19,6 +19,8 @@ export function getImageWatcher(store) {
 
     const zip = new JSZip()
 
+    zip.file('apple-touch-icon.png', images[180])
+
     const pngs = {
       16: images[16],
       24: images[24],
@@ -26,9 +28,20 @@ export function getImageWatcher(store) {
       64: images[64],
     }
     const icon = createIconFromPngs(pngs)
-
-    zip.file('touch-icon.png', images[180])
     zip.file('favicon.ico', icon)
+
+    const index = `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+</head>
+<body>
+</body>
+</html>`
+    zip.file('index.html', index)
 
     zip
       .generateAsync({ type: 'arraybuffer' })
