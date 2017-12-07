@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 import './index.css'
 import App from './components/App'
 import reducer from './reducers'
-import { getImageWatcher } from './task'
+import { getImageWatcher } from './tasks'
 import registerServiceWorker from './registerServiceWorker'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
