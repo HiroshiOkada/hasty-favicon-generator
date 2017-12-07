@@ -11,7 +11,7 @@ class Download extends Component {
     const link = event.target
 
     link.href = arrayBufferTodataURI('application/zip', downloadData)
-    link.download = `favicon_${caption}.zip`
+    link.download = `favicon-${caption}.zip`
   }
 
   render() {
@@ -25,7 +25,7 @@ class Download extends Component {
             onClick={e => this.handleClick(e)}
             disabled={!!downloadData}
           >
-            Download {caption}
+            Download: {`favicon-${caption}.zip`}
           </a>
         </div>
       )
