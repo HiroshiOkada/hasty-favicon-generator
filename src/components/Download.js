@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import './Download.css'
 import { CAPTION, DOWNLOAD_DATA } from '../reducers'
-import { arrayBufferTodataURI } from '../utils'
+import { arrayBufferTodataURI, getMessage } from '../utils'
 
 class Download extends Component {
   handleClick(event) {
@@ -15,7 +15,7 @@ class Download extends Component {
   }
 
   render() {
-    const { caption, downloadData } = this.props
+    const { downloadData } = this.props
     if (downloadData) {
       /* eslint-disable jsx-a11y/anchor-is-valid, jsx-a11y/href-no-hash */
       return (
@@ -25,7 +25,7 @@ class Download extends Component {
             onClick={e => this.handleClick(e)}
             disabled={!!downloadData}
           >
-            Download: {`favicon-${caption}.zip`}
+            {getMessage('download')}
           </a>
         </div>
       )

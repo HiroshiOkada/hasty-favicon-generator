@@ -62,3 +62,30 @@ export function arrayBufferTodataURI(mime, buf) {
   const data = fromByteArray(new Uint8Array(buf))
   return `data:${mime};base64,${data}`
 }
+
+export function getMessage(tag) {
+  const lang = window.navigator.language.match(/^ja/) ? 'ja' : 'en'
+  const message = {
+    en: {
+      title: 'Hasty favicon generator',
+      download: 'Download',
+      textColor: 'Text color',
+      fillColor: 'Background color',
+      help: [
+        'Putting more than one characters in the input field and choosing the text color and background color.',
+        'Then you can downlod apple-touch-icon.png and favicon.ico.',
+      ],
+    },
+    ja: {
+      title: '拙速 favicon ジェネレーター',
+      download: 'ダウンロード',
+      textColor: '文字の色',
+      fillColor: '背景の色',
+      help: [
+        'これは、ちゃんと favicon をデザインするのが面倒くさい時に「仮の」favicon を作成するWebアプリです。',
+        '入力欄に文字を入れ、文字の色と背景の色を選ぶと、favicon.ico とスマホ用の apple-touch-icon.png が作成できるので、「ダウンロード」ボタンでダウンロードして下さい。',
+      ],
+    },
+  }
+  return message[lang][tag]
+}

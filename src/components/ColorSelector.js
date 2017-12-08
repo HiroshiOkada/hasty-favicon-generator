@@ -10,6 +10,7 @@ import {
   changeFillColor,
 } from '../actions'
 import { TEXT_COLOR, FILL_COLOR } from '../reducers'
+import { getMessage } from '../utils'
 
 class ColorSelector extends Component {
   handleChangeComplete(color) {
@@ -21,7 +22,11 @@ class ColorSelector extends Component {
 
     return (
       <div className="ColorSelector" id={target}>
-        <p>{target === TEXT_COLOR ? 'テキストの色' : '背景色'}</p>
+        <p>
+          {target === TEXT_COLOR
+            ? getMessage('textColor')
+            : getMessage('fillColor')}
+        </p>
         <CompactPicker
           color={this.props.color}
           onChangeComplete={color => this.handleChangeComplete(color)}

@@ -5,12 +5,14 @@ import Canvas from './Canvas'
 import ColorSelector from './ColorSelector'
 import { TEXT_COLOR, FILL_COLOR } from '../reducers'
 import Download from './Download'
+import Help from './Help'
+import { getMessage } from '../utils'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Hasty favicon generator</h1>
+        <h1>{getMessage('title')}</h1>
         <Canvas size={180} id="Touch180" />
         <Canvas size={64} id="Favicon64" />
         <Canvas size={32} id="Favicon32" />
@@ -20,6 +22,7 @@ class App extends Component {
         <Download />
         <ColorSelector target={TEXT_COLOR} />
         <ColorSelector target={FILL_COLOR} />
+        <Help />
       </div>
     )
   }
