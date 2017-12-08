@@ -2,24 +2,26 @@
   text-align: center;
 }
 
-@media screen and (orientation: portrait) {
-  #textColor {
-    grid-row: 6;
-    grid-column: 1/3;
-  }
-  #fillColor {
-    grid-row: 7;
-    grid-column: 1/3;
-  }
+.ColorSelector p {
+  padding: 2px;
 }
 
-@media screen and (orientation: landscape) {
+#textColor {
+  grid-column: 1/3;
+  grid-row: 7;
+}
+#fillColor {
+  grid-column: 1/3;
+  grid-row: 8;
+}
+
+@media (min-width: 720px) {
   #textColor {
-    grid-row: 4;
     grid-column: 1/3;
+    grid-row: 4;
   }
   #fillColor {
+    grid-column: 3/8;
     grid-row: 4;
-    grid-column: 3/5;
   }
 }
