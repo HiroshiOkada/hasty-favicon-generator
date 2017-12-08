@@ -9,6 +9,9 @@ import Help from './Help'
 import { getMessage } from '../utils'
 
 class App extends Component {
+  componentDidMount() {
+    document.title = getMessage('title')
+  }
   render() {
     return (
       <div className="App">
