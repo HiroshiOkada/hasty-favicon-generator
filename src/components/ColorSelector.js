@@ -3,7 +3,12 @@ import CompactPicker from 'react-color'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import './ColorSelector.css'
-import { changeTextColor, changeFillColor } from '../actions'
+import {
+  clearImages,
+  setDownloadData,
+  changeTextColor,
+  changeFillColor,
+} from '../actions'
 import { TEXT_COLOR, FILL_COLOR } from '../reducers'
 
 class ColorSelector extends Component {
@@ -32,6 +37,8 @@ const mapStateToProps = (state, orgProps) => ({
 
 const mapDispatchToProps = (dispatch, orgProps) => ({
   setColor: color => {
+    dispatch(setDownloadData(null))
+    dispatch(clearImages())
     switch (orgProps.target) {
       case TEXT_COLOR:
         dispatch(changeTextColor(color))
