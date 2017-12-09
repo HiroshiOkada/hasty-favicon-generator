@@ -6,6 +6,7 @@ import {
   CHANGE_FILL_COLOR,
   SET_DOWNLOAD_DATA,
 } from '../actions/'
+import { getMessage } from '../utils'
 
 export const CAPTION = 'caption'
 export const TEXT_COLOR = 'textColor'
@@ -14,7 +15,7 @@ export const IMAGES = 'images'
 export const DOWNLOAD_DATA = 'downloadData'
 
 const initialState = {
-  [CAPTION]: 'A',
+  [CAPTION]: getMessage('defaultCaption'),
   [TEXT_COLOR]: '#ff0000',
   [FILL_COLOR]: '#00ff00',
   [IMAGES]: { 16: null, 24: null, 32: null, 64: null },

@@ -71,20 +71,24 @@ export function getMessage(tag) {
       download: 'Download',
       textColor: 'Text color',
       fillColor: 'Background color',
+      defaultCaption: 'H',
       help: [
         'Putting more than one characters in the input field and choosing the text color and background color.',
         'Then you can downlod apple-touch-icon.png and favicon.ico.',
       ],
+      source: 'Source code (GitHub)',
     },
     ja: {
       title: '拙速 favicon ジェネレーター',
       download: 'ダウンロード',
       textColor: '文字の色',
       fillColor: '背景の色',
+      defaultCaption: '仮',
       help: [
         'これは、ちゃんと favicon をデザインするのが面倒くさい時に「仮の」favicon を作成するWebアプリです。',
         '入力欄に文字を入れ、文字の色と背景の色を選ぶと、favicon.ico とスマホ用の apple-touch-icon.png が作成できるので、「ダウンロード」ボタンでダウンロードして下さい。',
       ],
+      source: 'ソースコード (GitHub)',
     },
   }
   return message[lang][tag]

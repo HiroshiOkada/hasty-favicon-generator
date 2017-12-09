@@ -1,13 +1,17 @@
 .Help {
   text-align: left;
-  font-size: 0.9em;
+  font-size: 0.95em;
   padding: 1em;
-  line-height: 1.4em;
+  line-height: 1.5em;
 }
 
 .Help {
   grid-column: 1/3;
   grid-row: 9;
+}
+
+.Help-Source {
+  text-align: right;
 }
 
 @media (min-width: 720px) {
