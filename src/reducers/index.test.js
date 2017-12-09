@@ -27,7 +27,7 @@ describe('clearImages', () => {
     expect(
       theApp({ [IMAGES]: { 16: '111', 32: '222' } }, clearImages()),
     ).toEqual({
-      [IMAGES]: {},
+      [IMAGES]: { 16: null, 24: null, 32: null, 64: null },
     })
   })
 })
