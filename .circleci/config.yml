@@ -13,7 +13,6 @@ jobs:
      steps:
        - checkout
        - run: ./deploy-scripts/build-upload.sh
-
 workflows:
   version: 2
   test-build-deploy:
