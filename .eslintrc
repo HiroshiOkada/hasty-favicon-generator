@@ -9,7 +9,8 @@
     "function-paren-newline": "off",
     "no-mixed-operators": "off",
     "arrow-parens": "off",
-    "object-curly-newline": "off"
+    "object-curly-newline": "off",
+    "indent": "off"
   },
   "globals": {
     "jest": false,
