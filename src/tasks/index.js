@@ -48,16 +48,16 @@ export function getImageWatcher(store) {
   }" sizes="16x16">
   <link rel="icon" type="image/png" href="favicon-24.png?t=${
     timeInMs
-  }"" sizes="24x24">
+  }" sizes="24x24">
   <link rel="icon" type="image/png" href="favicon-32.png?t=${
     timeInMs
-  }"" sizes="32x32">
+  }" sizes="32x32">
   <link rel="icon" type="image/png" href="favicon-64.png?t=${
     timeInMs
-  }"" sizes="64x64">
+  }" sizes="64x64">
   <link rel="apple-touch-icon" href="apple-touch-icon.png?t=${
     timeInMs
-  }"" sizes="180x180">
+  }" sizes="180x180">
 </head>
 <body>
   <h1>favicon-${caption}</h1>
