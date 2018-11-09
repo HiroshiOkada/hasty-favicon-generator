@@ -5,11 +5,11 @@ jobs:
        - image: circleci/node:10.13
      steps:
        - checkout
-       - run: yarn install
-       - run: CI=true yarn test
+       - run: npm install
+       - run: CI=true npm test
    deploy:
      docker:
-       - image: circleci/node:8.9
+       - image: circleci/node:10.13
      steps:
        - checkout
        - run: sudo apt-get update && sudo apt-get install -y awscli
