@@ -1,6 +1,5 @@
 {
   "parser": "babel-eslint",
-  "extends": "airbnb",
   "rules": {
     "semi": "off",
     "no-console": "off",
