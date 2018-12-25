@@ -2,14 +2,14 @@ version: 2
 jobs:
    test:
      docker:
-       - image: circleci/node:10.13
+       - image: circleci/node:10.14
      steps:
        - checkout
-       - run: npm install
+       - run: npm ci
        - run: CI=true npm test
    deploy:
      docker:
-       - image: circleci/node:10.13
+       - image: circleci/node:10.14
      steps:
        - checkout
        - run: sudo apt-get update && sudo apt-get install -y awscli
