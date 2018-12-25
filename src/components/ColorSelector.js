@@ -63,4 +63,7 @@ ColorSelector.propTypes = {
   color: PropTypes.string.isRequired,
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ColorSelector)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(ColorSelector)

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import Caption from './Caption'
+import Offsets from './Offsets'
 import Canvas from './Canvas'
 import ColorSelector from './ColorSelector'
 import { TEXT_COLOR, FILL_COLOR } from '../reducers'
@@ -23,6 +24,7 @@ class App extends Component {
         <Canvas size={16} id="Favicon16" />
         <Caption />
         <Download />
+        <Offsets />
         <ColorSelector target={TEXT_COLOR} />
         <ColorSelector target={FILL_COLOR} />
         <Help />

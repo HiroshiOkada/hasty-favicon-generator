@@ -1,5 +1,6 @@
 import {
   changeCaption,
+  changeOffsets,
   clearImages,
   addUpdateImage,
   changeTextColor,
@@ -8,6 +9,7 @@ import {
 } from '../actions'
 import theApp, {
   CAPTION,
+  OFFSETS,
   TEXT_COLOR,
   FILL_COLOR,
   IMAGES,
@@ -16,8 +18,20 @@ import theApp, {
 
 describe('changeCaption', () => {
   it('should change caption', () => {
-    expect(theApp({ [CAPTION]: 'old msg' }, changeCaption('new msg'))).toEqual({
+    expect(
+      theApp({ [CAPTION]: 'old msg' }, changeCaption('new msg')),
+    ).toEqual({
       [CAPTION]: 'new msg',
+    })
+  })
+})
+
+describe('changeOffsets', () => {
+  it('should change offsets', () => {
+    expect(
+      theApp({ [OFFSETS]: { x: 0, y: 0 } }, changeOffsets({ x: 1, y: 2 })),
+    ).toEqual({
+      [OFFSETS]: { x: 1, y: 2 },
     })
   })
 })

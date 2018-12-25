@@ -1,5 +1,6 @@
 import {
   CHANGE_CAPTION,
+  CHANGE_OFFSETS,
   CLEAR_IMAGES,
   ADD_UPDATE_IMAGE,
   CHANGE_TEXT_COLOR,
@@ -9,6 +10,7 @@ import {
 import { getMessage } from '../utils'
 
 export const CAPTION = 'caption'
+export const OFFSETS = 'offsets'
 export const TEXT_COLOR = 'textColor'
 export const FILL_COLOR = 'fillColor'
 export const IMAGES = 'images'
@@ -16,6 +18,7 @@ export const DOWNLOAD_DATA = 'downloadData'
 
 const initialState = {
   [CAPTION]: getMessage('defaultCaption'),
+  [OFFSETS]: { x: 0, y: 0.0 },
   [TEXT_COLOR]: '#ff0000',
   [FILL_COLOR]: '#00ff00',
   [IMAGES]: { 16: null, 24: null, 32: null, 64: null },
@@ -26,6 +29,8 @@ const theApp = (state = initialState, action) => {
   switch (action.type) {
     case CHANGE_CAPTION:
       return { ...state, [CAPTION]: action[CAPTION] }
+    case CHANGE_OFFSETS:
+      return { ...state, [OFFSETS]: action[OFFSETS] }
     case CLEAR_IMAGES:
       return {
         ...state,

@@ -9,7 +9,7 @@
 .App {
   width: 240px;
   grid-template-columns: 120px 120px;
-  grid-template-rows: 2em 240px 80px 40px 2em 5em 270px 270px max-content;
+  grid-template-rows: 2em 240px 80px 40px 2em 5em 5em 270px 270px max-content;
 }
 .App h1 {
   font-size: 1.1em;
@@ -21,7 +21,7 @@
   .App {
     width: 480px;
     grid-template-columns: 120px 120px 98px 50px 38px 26px 28px;
-    grid-template-rows: 3em 240px 5em 270px max-content;
+    grid-template-rows: 3em 240px 5em 5em 270px max-content;
   }
   .App h1 {
     font-size: 1.5em;

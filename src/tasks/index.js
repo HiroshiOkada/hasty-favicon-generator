@@ -40,24 +40,12 @@ export function getImageWatcher(store) {
 <head>
   <meta charset="UTF-8">
   <title>favicon-${caption}</title>
-  <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico?t=${
-    timeInMs
-  }">
-  <link rel="icon" type="image/png" href="favicon-16.png?t=${
-    timeInMs
-  }" sizes="16x16">
-  <link rel="icon" type="image/png" href="favicon-24.png?t=${
-    timeInMs
-  }" sizes="24x24">
-  <link rel="icon" type="image/png" href="favicon-32.png?t=${
-    timeInMs
-  }" sizes="32x32">
-  <link rel="icon" type="image/png" href="favicon-64.png?t=${
-    timeInMs
-  }" sizes="64x64">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png?t=${
-    timeInMs
-  }" sizes="180x180">
+  <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico?t=${timeInMs}">
+  <link rel="icon" type="image/png" href="favicon-16.png?t=${timeInMs}" sizes="16x16">
+  <link rel="icon" type="image/png" href="favicon-24.png?t=${timeInMs}" sizes="24x24">
+  <link rel="icon" type="image/png" href="favicon-32.png?t=${timeInMs}" sizes="32x32">
+  <link rel="icon" type="image/png" href="favicon-64.png?t=${timeInMs}" sizes="64x64">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?t=${timeInMs}" sizes="180x180">
 </head>
 <body>
   <h1>favicon-${caption}</h1>
@@ -66,9 +54,7 @@ export function getImageWatcher(store) {
     <img src="favicon-24.png?t=${timeInMs}" alt="24x24 favicon png">
     <img src="favicon-32.png?t=${timeInMs}" alt="32x32 favicon png">
     <img src="favicon-64.png?t=${timeInMs}" alt="64x64 favicon png">
-    <img src="apple-touch-icon.png?t=${
-      timeInMs
-    }" alt="180x180 apple touch icon png">
+    <img src="apple-touch-icon.png?t=${timeInMs}" alt="180x180 apple touch icon png">
   </p>
 </body>
 </html>`

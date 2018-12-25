@@ -1,11 +1,13 @@
 import {
   CHANGE_CAPTION,
+  CHANGE_OFFSETS,
   CLEAR_IMAGES,
   ADD_UPDATE_IMAGE,
   CHANGE_TEXT_COLOR,
   CHANGE_FILL_COLOR,
   SET_DOWNLOAD_DATA,
   changeCaption,
+  changeOffsets,
   clearImages,
   addUpdateImage,
   changeTextColor,
@@ -26,7 +28,14 @@ describe('types', () => {
 
 describe('action creaters', () => {
   it('shoud create correct action', () => {
-    expect(changeCaption('Hi')).toEqual({ type: CHANGE_CAPTION, caption: 'Hi' })
+    expect(changeCaption('Hi')).toEqual({
+      type: CHANGE_CAPTION,
+      caption: 'Hi',
+    })
+    expect(changeOffsets({ x: 1, y: 2 })).toEqual({
+      type: CHANGE_OFFSETS,
+      offsets: { x: 1, y: 2 },
+    })
     expect(clearImages()).toEqual({ type: CLEAR_IMAGES })
     expect(addUpdateImage(16, '0001')).toEqual({
       type: ADD_UPDATE_IMAGE,

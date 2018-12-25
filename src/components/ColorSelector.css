@@ -8,20 +8,20 @@
 
 #textColor {
   grid-column: 1/3;
-  grid-row: 7;
+  grid-row: 8;
 }
 #fillColor {
   grid-column: 1/3;
-  grid-row: 8;
+  grid-row: 9;
 }
 
 @media (min-width: 720px) {
   #textColor {
     grid-column: 1/3;
-    grid-row: 4;
+    grid-row: 5;
   }
   #fillColor {
     grid-column: 3/8;
-    grid-row: 4;
+    grid-row: 5;
   }
 }

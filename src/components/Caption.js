@@ -38,4 +38,7 @@ Caption.propTypes = {
   change: PropTypes.func.isRequired,
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Caption)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Caption)

@@ -15,7 +15,14 @@ class Canvas extends Component {
   }
 
   drawCaption() {
-    const { size, caption, textColor, fillColor, putImage } = this.props
+    const {
+      size,
+      caption,
+      offsets,
+      textColor,
+      fillColor,
+      putImage,
+    } = this.props
     const ctx = this.canvas.getContext('2d')
 
     // Todo: remove it when canvas test complete
@@ -30,7 +37,12 @@ class Canvas extends Component {
     ctx.textAlign = 'center'
     ctx.textBaseline = 'middle'
     ctx.fillStyle = textColor
-    ctx.fillText(caption, size / 2, size / 2, size)
+    ctx.fillText(
+      caption,
+      (0.5 + offsets.x) * size,
+      (0.5 + offsets.y) * size,
+      size,
+    )
 
     const data = dataURIToArrayBuffer(this.canvas.toDataURL())
     putImage(size, data)
@@ -54,6 +66,7 @@ class Canvas extends Component {
 
 const mapStateToProps = state => ({
   caption: state.caption,
+  offsets: state.offsets,
   textColor: state.textColor,
   fillColor: state.fillColor,
 })
@@ -65,6 +78,10 @@ const mapDispatchToProps = dispatch => ({
 
 Canvas.propTypes = {
   caption: PropTypes.string.isRequired,
+  offsets: PropTypes.shape({
+    x: PropTypes.number,
+    y: PropTypes.number,
+  }).isRequired,
   size: PropTypes.number.isRequired,
   id: PropTypes.string.isRequired,
   textColor: PropTypes.string.isRequired,
@@ -72,4 +89,7 @@ Canvas.propTypes = {
   putImage: PropTypes.func.isRequired,
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Canvas)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Canvas)
