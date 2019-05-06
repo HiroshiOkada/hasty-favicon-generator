@@ -18,9 +18,7 @@ import theApp, {
 
 describe('changeCaption', () => {
   it('should change caption', () => {
-    expect(
-      theApp({ [CAPTION]: 'old msg' }, changeCaption('new msg')),
-    ).toEqual({
+    expect(theApp({ [CAPTION]: 'old msg' }, changeCaption('new msg'))).toEqual({
       [CAPTION]: 'new msg',
     })
   })

@@ -8,8 +8,7 @@ import reducer from './reducers'
 import { getImageWatcher } from './tasks'
 import registerServiceWorker from './registerServiceWorker'
 
-const composeEnhancers =
-  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(reducer, composeEnhancers())
 
 const imageWatcher = getImageWatcher(store)
