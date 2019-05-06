@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import './Offsets.css'
+import './Adjuster.css'
 import { clearImages, changeOffsets, setDownloadData } from '../actions'
 import { OFFSETS } from '../reducers'
 
-class Offsets extends Component {
+class Adjuster extends Component {
   handleClick(event, diff) {
     const x = this.props.offsets.x + diff.x
     const y = this.props.offsets.y + diff.y
@@ -14,7 +14,7 @@ class Offsets extends Component {
 
   render() {
     return (
-      <div className="Offsets">
+      <div className="Adjuster">
         <button onClick={e => this.handleClick(e, { x: -1 / 32, y: 0 })}>
           <span role="img" aria-label="left">
             ⬅️
@@ -35,6 +35,16 @@ class Offsets extends Component {
             ➡️
           </span>
         </button>
+        <button onClick={e => this.handleClick(e, { x: 0, y: 0 })}>
+          <span role="img" aria-label="right">
+            ➕
+          </span>
+        </button>
+        <button onClick={e => this.handleClick(e, { x: 0, y: 0 })}>
+          <span role="img" aria-label="right">
+            ➖
+          </span>
+        </button>
       </div>
     )
   }
@@ -52,7 +62,7 @@ const mapDispatchToProps = dispatch => ({
   },
 })
 
-Offsets.propTypes = {
+Adjuster.propTypes = {
   offsets: PropTypes.shape({
     x: PropTypes.number,
     y: PropTypes.number,
@@ -63,4 +73,4 @@ Offsets.propTypes = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Offsets)
+)(Adjuster)

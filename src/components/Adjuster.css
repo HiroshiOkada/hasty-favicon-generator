@@ -1,14 +1,14 @@
-.Offsets {
+.Adjuster {
   text-align: center;
 }
 
-.Offsets {
+.Adjuster {
   grid-column: 1/3;
   grid-row: 7;
 }
 
-.Offsets button {
-  background-color: blue;
+.Adjuster button {
+  background-color: #448;
   border: none;
   color: white;
   margin: 0 5px;
@@ -20,7 +20,7 @@
 }
 
 @media (min-width: 720px) {
-  .Offsets {
+  .Adjuster {
     grid-column: 1/8;
     grid-row: 4;
   }
