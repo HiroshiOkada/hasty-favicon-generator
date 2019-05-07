@@ -1,6 +1,7 @@
 import {
   changeCaption,
   changeOffsets,
+  changeFontScale,
   clearImages,
   addUpdateImage,
   changeTextColor,
@@ -10,6 +11,7 @@ import {
 import theApp, {
   CAPTION,
   OFFSETS,
+  FONT_SCALE,
   TEXT_COLOR,
   FILL_COLOR,
   IMAGES,
@@ -30,6 +32,22 @@ describe('changeOffsets', () => {
       theApp({ [OFFSETS]: { x: 0, y: 0 } }, changeOffsets({ x: 1, y: 2 })),
     ).toEqual({
       [OFFSETS]: { x: 1, y: 2 },
+    })
+  })
+})
+
+describe('changeFontScale', () => {
+  it('should change scale', () => {
+    expect(theApp({ [FONT_SCALE]: 100 }, changeFontScale(10))).toEqual({
+      [FONT_SCALE]: 110,
+    })
+  })
+  it('should have scale limit', () => {
+    expect(theApp({ [FONT_SCALE]: 100 }, changeFontScale(110))).toEqual({
+      [FONT_SCALE]: 200,
+    })
+    expect(theApp({ [FONT_SCALE]: 100 }, changeFontScale(-100))).toEqual({
+      [FONT_SCALE]: 20,
     })
   })
 })

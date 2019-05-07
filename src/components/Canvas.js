@@ -22,6 +22,7 @@ class Canvas extends Component {
       textColor,
       fillColor,
       putImage,
+      fontScale,
     } = this.props
     const ctx = this.canvas.getContext('2d')
 
@@ -33,7 +34,7 @@ class Canvas extends Component {
     ctx.clearRect(0, 0, size, size)
     ctx.fillStyle = fillColor
     ctx.fillRect(0, 0, size, size)
-    ctx.font = `${size}px sans-serif`
+    ctx.font = `${(size * fontScale) / 100}px sans-serif`
     ctx.textAlign = 'center'
     ctx.textBaseline = 'middle'
     ctx.fillStyle = textColor
@@ -69,6 +70,7 @@ const mapStateToProps = state => ({
   offsets: state.offsets,
   textColor: state.textColor,
   fillColor: state.fillColor,
+  fontScale: state.fontScale,
 })
 const mapDispatchToProps = dispatch => ({
   putImage(size, data) {

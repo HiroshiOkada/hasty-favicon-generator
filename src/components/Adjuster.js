@@ -2,45 +2,54 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import './Adjuster.css'
-import { clearImages, changeOffsets, setDownloadData } from '../actions'
+import {
+  clearImages,
+  changeOffsets,
+  changeFontScale,
+  setDownloadData,
+} from '../actions'
 import { OFFSETS } from '../reducers'
 
 class Adjuster extends Component {
-  handleClick(event, diff) {
+  onOffsetBtnClick(event, diff) {
     const x = this.props.offsets.x + diff.x
     const y = this.props.offsets.y + diff.y
-    this.props.change({ x, y })
+    this.props.setOffsets({ x, y })
+  }
+
+  onChangeFontScaleBtnClick(event, diff) {
+    this.props.updateFontScale(diff)
   }
 
   render() {
     return (
       <div className="Adjuster">
-        <button onClick={e => this.handleClick(e, { x: -1 / 32, y: 0 })}>
+        <button onClick={e => this.onOffsetBtnClick(e, { x: -1 / 32, y: 0 })}>
           <span role="img" aria-label="left">
             ⬅️
           </span>
         </button>
-        <button onClick={e => this.handleClick(e, { x: 0, y: -1 / 32 })}>
+        <button onClick={e => this.onOffsetBtnClick(e, { x: 0, y: -1 / 32 })}>
           <span role="img" aria-label="up">
             ⬆️
           </span>
         </button>
-        <button onClick={e => this.handleClick(e, { x: 0, y: 1 / 32 })}>
+        <button onClick={e => this.onOffsetBtnClick(e, { x: 0, y: 1 / 32 })}>
           <span role="img" aria-label="down">
             ⬇️
           </span>
         </button>
-        <button onClick={e => this.handleClick(e, { x: 1 / 32, y: 0 })}>
+        <button onClick={e => this.onOffsetBtnClick(e, { x: 1 / 32, y: 0 })}>
           <span role="img" aria-label="right">
             ➡️
           </span>
         </button>
-        <button onClick={e => this.handleClick(e, { x: 0, y: 0 })}>
+        <button onClick={e => this.onChangeFontScaleBtnClick(e, 5)}>
           <span role="img" aria-label="right">
             ➕
           </span>
         </button>
-        <button onClick={e => this.handleClick(e, { x: 0, y: 0 })}>
+        <button onClick={e => this.onChangeFontScaleBtnClick(e, -5)}>
           <span role="img" aria-label="right">
             ➖
           </span>
@@ -55,10 +64,16 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  change: offsets => {
+  setOffsets: offsets => {
     dispatch(setDownloadData(null))
     dispatch(clearImages())
     dispatch(changeOffsets(offsets))
+  },
+  updateFontScale: diff => {
+    console.log({ diff })
+    dispatch(setDownloadData(null))
+    dispatch(clearImages())
+    dispatch(changeFontScale(diff))
   },
 })
 
@@ -67,7 +82,8 @@ Adjuster.propTypes = {
     x: PropTypes.number,
     y: PropTypes.number,
   }).isRequired,
-  change: PropTypes.func.isRequired,
+  setOffsets: PropTypes.func.isRequired,
+  updateFontScale: PropTypes.func.isRequired,
 }
 
 export default connect(

@@ -6,12 +6,14 @@ import {
   CHANGE_TEXT_COLOR,
   CHANGE_FILL_COLOR,
   SET_DOWNLOAD_DATA,
+  CHANGE_FONT_SCALE,
 } from '../actions/'
 import { getMessage } from '../utils'
 
 export const CAPTION = 'caption'
 export const OFFSETS = 'offsets'
 export const TEXT_COLOR = 'textColor'
+export const FONT_SCALE = 'fontScale'
 export const FILL_COLOR = 'fillColor'
 export const IMAGES = 'images'
 export const DOWNLOAD_DATA = 'downloadData'
@@ -19,6 +21,7 @@ export const DOWNLOAD_DATA = 'downloadData'
 const initialState = {
   [CAPTION]: getMessage('defaultCaption'),
   [OFFSETS]: { x: 0, y: 0.0 },
+  [FONT_SCALE]: 100,
   [TEXT_COLOR]: '#ff0000',
   [FILL_COLOR]: '#00ff00',
   [IMAGES]: { 16: null, 24: null, 32: null, 64: null },
@@ -31,6 +34,10 @@ const theApp = (state = initialState, action) => {
       return { ...state, [CAPTION]: action[CAPTION] }
     case CHANGE_OFFSETS:
       return { ...state, [OFFSETS]: action[OFFSETS] }
+    case CHANGE_FONT_SCALE: {
+      const scale = Math.min(200, Math.max(20, state[FONT_SCALE] + action.diff))
+      return { ...state, [FONT_SCALE]: scale }
+    }
     case CLEAR_IMAGES:
       return {
         ...state,
