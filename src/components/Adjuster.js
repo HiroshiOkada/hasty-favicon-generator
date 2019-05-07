@@ -70,7 +70,6 @@ const mapDispatchToProps = dispatch => ({
     dispatch(changeOffsets(offsets))
   },
   updateFontScale: diff => {
-    console.log({ diff })
     dispatch(setDownloadData(null))
     dispatch(clearImages())
     dispatch(changeFontScale(diff))
