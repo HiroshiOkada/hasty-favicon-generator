@@ -26,22 +26,22 @@ class Adjuster extends Component {
       <div className="Adjuster">
         <button onClick={e => this.onOffsetBtnClick(e, { x: -1 / 32, y: 0 })}>
           <span role="img" aria-label="left">
-            ⬅️
+            ←
           </span>
         </button>
         <button onClick={e => this.onOffsetBtnClick(e, { x: 0, y: -1 / 32 })}>
           <span role="img" aria-label="up">
-            ⬆️
+            ↑
           </span>
         </button>
         <button onClick={e => this.onOffsetBtnClick(e, { x: 0, y: 1 / 32 })}>
           <span role="img" aria-label="down">
-            ⬇️
+            ↓
           </span>
         </button>
         <button onClick={e => this.onOffsetBtnClick(e, { x: 1 / 32, y: 0 })}>
           <span role="img" aria-label="right">
-            ➡️
+            →
           </span>
         </button>
         <button onClick={e => this.onChangeFontScaleBtnClick(e, 5)}>
